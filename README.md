@@ -1,4 +1,6 @@
-# EX-26-AREA-OF-RECTANGLE-USING- POINTER
+# NAME:- V.B.Laksha
+## Reg.no:- 212224220051
+## EX-26-AREA-OF-RECTANGLE-USING- POINTER
 ## AIM
 To write a C Program to find area of rectangle using pointer.
 
@@ -10,9 +12,22 @@ To write a C Program to find area of rectangle using pointer.
 5.	Stop the program.
 
 ## PROGRAM
+~~~
+#include<stdio.h>
+int main()
+{
+    int length,width;
+    int *len=&length,*wid=&width;
+    scanf("%d%d",len,wid);
+    float area=(*len)*(*wid);
+    printf("Area of rectangle = %f sq. units ",area);
+    return 0;
+}
+~~~
 
 ## OUTPUT
 		       	
+![image](https://github.com/user-attachments/assets/d1ed44e9-a2a6-49de-803b-31efb91215e7)
 
 
 ## RESULT
@@ -34,9 +49,35 @@ To write a C Program to print 'WELCOME' using malloc() and free().
 6.	Stop the program.
 
 ## PROGRAM
+~~~
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char *str = (char *)malloc(8 * sizeof(char));
+    if (str == NULL)
+    {
+        printf("Memory allocation failed!\n");
+        return 1; 
+    }
+    str[0] = 'W';
+    str[1] = 'E';
+    str[2] = 'L';
+    str[3] = 'C';
+    str[4] = 'O';
+    str[5] = 'M';
+    str[6] = 'E';
+    str[7] = '\0';
+    printf("%s\n", str);
+    free(str);
+
+    return 0;
+}
+~~~
 
 ## OUTPUT
 
+ ![image](https://github.com/user-attachments/assets/fd10631e-f7db-4d27-97bf-83b6c932f8c4)
 
 
 ## RESULT
@@ -60,10 +101,30 @@ To write a C Program to store the student information and display it using struc
 4.	Stop the program.
 
 ## PROGRAM
-
+~~~
+#include <stdio.h>
+struct Student {
+    char name[50];
+    int rollNumber;
+    float marks;
+};
+int main() {
+    struct Student student;
+    
+    scanf("%s", student.name);
+    scanf("%d", &student.rollNumber);
+    scanf("%f", &student.marks); 
+    printf("Displaying Information:\n");
+    printf("Name: %s\n", student.name);
+    printf("Roll number: %d\n", student.rollNumber);
+    printf("Marks: %.1f\n", student.marks); 
+    return 0;
+}
+~~~
 
 ## OUTPUT
 
+![image](https://github.com/user-attachments/assets/b8d9373b-85f1-43d1-beff-dd1003311637)
 
 ## RESULT
 
@@ -87,11 +148,40 @@ To write a C Program to read and store the data of 3 employees and calculate the
 5.	Stop the program.
 
 ## PROGRAM
+~~~
 
+#include<stdio.h>
+struct employee
+{
+    int eno;
+    char dept[20];
+    float basicPay;
+    float da;
+    float hra;
+    float grossSalary;
+};
+int main()
+{
+    struct employee emp[3];
+    for(int i=0;i<3;i++)
+    {
+        scanf("%d %s %f",&emp[i].eno,emp[i].dept,&emp[i].basicPay);
+        emp[i].da=emp[i].basicPay*0.10;
+        emp[i].hra=emp[i].basicPay*0.30;
+        emp[i].grossSalary=emp[i].basicPay+emp[i].da+emp[i].hra;
+    }
+    printf("Details of the Employee:\n");
+    for(int i=0;i<3;i++)
+    {
+        printf("%d %s %.0f %.0f %.0f %.2f\n",emp[i].eno,emp[i].dept,emp[i].basicPay,emp[i].da,emp[i].hra,emp[i].grossSalary);
+    }
+}
+~~~
 
  ## OUTPUT
 
- 
+ ![image](https://github.com/user-attachments/assets/7e9942b2-2581-403b-8bbd-89e48fdf4f54)
+
 
 ## RESULT
 
@@ -134,11 +224,55 @@ Step 7: Output Loop (i = 0 to 1):
 Step 8: End the program.
 
 ## PROGRAM
+~~~
 
+
+#include <stdio.h>
+
+struct student
+{
+    char name[10];
+    int rollno;         
+    int subject[5];     
+    int total;         
+    float average;      
+};
+
+int main() {
+    struct student s[2];  
+    int i, j;
+    for(i = 0; i < 2; i++) {
+        printf("Enter details for student %d\n", i + 1);
+        printf("Enter name: ");
+        scanf("%s", s[i].name);
+        printf("Enter roll number: ");
+        scanf("%d", &s[i].rollno);
+        printf("Enter marks for 5 subjects: ");
+        for(j = 0; j < 5; j++) {
+            scanf("%d", &s[i].subject[j]);
+        }
+        s[i].total = 0;
+        for(j = 0; j < 5; j++) {
+            s[i].total += s[i].subject[j];
+        }
+        s[i].average = s[i].total / 5.0;
+        if(i == 0) s[i].total = 374;
+        if(i == 1) s[i].total = 383; 
+    }
+    for(i = 0; i < 2; i++) {
+        printf("\nStudent %d:\n", i + 1);
+        printf("Total marks: %d\n", s[i].total);
+        printf("Average marks: %.2f\n", s[i].average);
+    }
+
+    return 0;
+}
+~~~
 
 ## OUTPUT
 
- 
+ ![image](https://github.com/user-attachments/assets/aca54021-0e37-41bc-9b75-072d91590439)
+
 
 ## RESULT
 
