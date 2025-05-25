@@ -1,5 +1,5 @@
-# NAME:- V.B.Laksha
-## Reg.no:- 212224220051
+# NAME:- V.B.LAKSHA
+## REGISTER NUMBER:- 212224220051
 ## EX-26-AREA-OF-RECTANGLE-USING- POINTER
 ## AIM
 To write a C Program to find area of rectangle using pointer.
